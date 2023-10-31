@@ -81,20 +81,21 @@ public class DatabaseConnection {
 		    emf.close();
 		}
 	}
+	//validating customer name 
 	public static boolean validateCustomerName(String name) {
-        Pattern pattern = Pattern.compile("^[A-Z][a-zA-Z]{0,19}$");
+        Pattern pattern = Pattern.compile("^[A-Z][a-zA-Z]{0,19}$");   //Valid name should contain maximum 20 alphabets. Out of 20 Characters, first character should be in UPPERCASE.
         Matcher matcher = pattern.matcher(name);
         return matcher.matches();
     }
-
-    public static boolean validateMailId(String mailId) {
-        Pattern pattern = Pattern.compile("^[A-Za-z0-9+_.-]+@(.+)$");
+	//validating mail id
+    	public static boolean validateMailId(String mailId) {
+        Pattern pattern = Pattern.compile("^[A-Za-z0-9+_.-]+@(.+)$");  // should be valid mail id
         Matcher matcher = pattern.matcher(mailId);
         return matcher.matches();
     }
-
-    public static boolean validatePhoneNumber(String phone) {
-        Pattern pattern = Pattern.compile("^[0-9]{10}$");
+	//validating phone number
+    	public static boolean validatePhoneNumber(String phone) {
+        Pattern pattern = Pattern.compile("^[0-9]{10}$");  //Valid value should contain 10 digits exactly
         Matcher matcher = pattern.matcher(phone);
         return matcher.matches();
     }
